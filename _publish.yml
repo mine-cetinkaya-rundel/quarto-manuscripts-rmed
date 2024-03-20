@@ -1,0 +1,4 @@
+- source: quarto-manuscripts.qmd
+  quarto-pub:
+    - id: 77c39da9-c9b2-4673-ba46-9386f182b7d7
+      url: 'https://mine.quarto.pub/quarto-manuscripts-rmed'

@@ -1,7 +1,7 @@
 ---
 title: "Quarto for Reproducible Medical Manuscripts"
 author: "Mine Çetinkaya-Rundel"
-institute: "Duke University + Posit<br>{{< fa link >}} [mine.quarto.pub/manuscripts-rmed](https://mine.quarto.pub/manuscripts-rmed)"
+institute: "Duke University + Posit<br>{{< fa link >}} [mine.quarto.pub/quarto-manuscripts-rmed](https://mine.quarto.pub/quarto-manuscripts-rmed)"
 title-slide-attributes:
   data-background-image: "images/towfiqu-barbhuiya-KKHs1e2yiwc-unsplash.jpg"
   data-background-size: cover
@@ -420,9 +420,9 @@ with `quarto use binder`:
 
 Slides:
 
-{{< fa link >}} [mine.quarto.pub/manuscripts-rmed](https://mine.quarto.pub/manuscripts-rmed)
+{{< fa link >}} [mine.quarto.pub/quarto-manuscripts-rmed](https://mine.quarto.pub/quarto-manuscripts-rmed)
 
-{{< fa brands github >}} [github.com/mine-cetinkaya-rundel/quarto-manuscripts](https://github.com/mine-cetinkaya-rundel/quarto-manuscripts)
+{{< fa brands github >}} [github.com/mine-cetinkaya-rundel/quarto-manuscripts-rmed](https://github.com/mine-cetinkaya-rundel/quarto-manuscripts-rmed)
 
 Manuscript:
 
