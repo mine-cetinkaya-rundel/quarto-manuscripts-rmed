@@ -1,0 +1,431 @@
+---
+title: "Quarto for Reproducible Medical Manuscripts"
+author: "Mine Çetinkaya-Rundel"
+institute: "Duke University + Posit<br>{{< fa link >}} [mine.quarto.pub/manuscripts-rmed](https://mine.quarto.pub/manuscripts-rmed)"
+title-slide-attributes:
+  data-background-image: "images/towfiqu-barbhuiya-KKHs1e2yiwc-unsplash.jpg"
+  data-background-size: cover
+  data-background-opacity: "0.25"
+format: 
+  revealjs:
+    theme: [slides.scss]
+    mainfont: "Atkinson Hylerlegible"
+    fontcolor: "#22304E"
+    linkcolor: "#80a9d7"
+editor: visual
+---
+
+# Full complexity spectrum of reproducible scientific projects
+
+## Simplest
+
+Can run all code in a single file, and don't mind running it over and over again with each edit.
+
+::: columns
+::: {.column width="47.5%"}
+::: {style="text-align: center;"}
+![](images/quarto-file.png){fig-align="center"} [{{< fa brands r-project >}}]{style="font-size: 100px;color: #3564B1"}
+:::
+:::
+
+::: {.column width="5%"}
+::: {style="text-align: center; font-size: 30px;"}
+<br><br> {{< fa arrow-right >}}
+:::
+:::
+
+::: {.column width="47.5%"}
+::: {style="text-align: center; font-size: 190px;"}
+[{{< fa brands html5 >}}]{style="color: #d35836"}
+:::
+:::
+:::
+
+e.g. Data Science 101 - HW 1, Stat 101 - Final project, a blog post, a tutorial, a not-too-extensive consulting report, etc.
+
+## Simple
+
+Can run all code in a single file, and don't mind running it over and over again with each edit, **and** need an output that conforms to journal style.
+
+::: columns
+::: {.column width="35%"}
+::: {style="text-align: center;"}
+![](images/quarto-file.png){fig-align="center"} [{{< fa brands r-project >}}]{style="font-size: 100px;color: #3564B1"}
+
+`+` [**Quarto Journal Articles Extension**](https://quarto.org/docs/extensions/listing-journals.html)
+:::
+:::
+
+::: {.column width="5%"}
+::: {style="text-align: center; font-size: 30px;"}
+<br><br> {{< fa arrow-right >}}
+:::
+:::
+
+::: {.column width="55%"}
+::: {style="text-align: center; font-size: 190px;"}
+{{< fa file-pdf >}} [or]{style="font-size: 50px"} {{< fa file-word >}}
+:::
+
+::: {style="text-align: center;"}
+[formatted with journal style]{style="font-size: 40px"}
+:::
+:::
+:::
+
+e.g., a not-too-computational journal article.
+
+## [but science is rarely simple...]{style="font-size: 80px; font-family: Brusher;"} {.center}
+
+::: incremental
+-   multiple collaborators, each with their favorite computing language and code editor
+-   multiple stages of a project, each with their own level of feasibility of what can be re-run with each edit and what needs to be cached
+:::
+
+## More complex
+
+::: columns
+::: {.column width="30%"}
+::: {style="text-align: center;"}
+![](images/quarto-file.png){fig-align="center"}
+
+[{{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}}]{style="font-size: 70px"}
+
+[{{< fa brands r-project >}}]{style="font-size: 100px;color: #3564B1"}
+:::
+:::
+
+::: {.column width="5%"}
+::: {style="text-align: center; font-size: 30px;"}
+<br><br> {{< fa arrow-right >}}
+:::
+:::
+
+::: {.column width="55%"}
+::: {style="text-align: center; font-size: 190px;"}
+{{< fa file-pdf >}} [or]{style="font-size: 50px"} {{< fa file-word >}}
+:::
+:::
+:::
+
+## Even more complex
+
+::: columns
+::: {.column width="40%"}
+::: {style="text-align: center;"}
+![](images/quarto-file.png){fig-align="center"}![](images/quarto-file.png){fig-align="center"}
+
+[{{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}} {{< fa file-code >}}]{style="font-size: 70px"}
+
+[{{< fa brands r-project >}}]{style="font-size: 100px;color: #306998"} [{{< fa brands python >}}]{style="font-size: 100px;color: #4B8BBE"}
+:::
+:::
+
+::: {.column width="5%"}
+::: {style="text-align: center; font-size: 30px;"}
+<br><br> {{< fa arrow-right >}}
+:::
+:::
+
+::: {.column width="55%"}
+::: {style="text-align: center; font-size: 190px;"}
+{{< fa file-pdf >}} [or]{style="font-size: 50px"} {{< fa file-word >}}
+:::
+:::
+:::
+
+# Leveraging Quarto for fully reproducible scientific manuscripts
+
+## Aside: What is in a notebook?
+
+A notebook is a document that contains both **code** and **narrative**:
+
+-   Jupyter notebooks (`.ipynb`)
+-   Quarto documents (`.qmd`) -- a potential mindshift
+
+## Current state of affairs
+
+Most computational science is **born in notebooks**
+
+::: incremental
+-   Peer-review and publication workflows **don't support notebooks** as research outputs
+-   The more complex scenarios involve a lot of **manual finagling** to bring the project to journal submission stage
+-   Often during this process **reproducibility is lost**, or takes second seat to the formatting requirements
+-   Final submission **rarely captures all computations**, which are, at best, relegated to supplementary materials
+:::
+
+and ~~dies~~ **ends in PDF or Word documents**
+
+##  {.centered}
+
+![](images/notebooks-now.png){width="100%"}
+
+More at <https://data.agu.org/notebooks-now>.
+
+::: aside
+Caprarelli, Graziella, et al. "Notebooks Now! The Future of Reproducible Research." *Earth and Space Science* 10.12 (2023): e2023EA003458. <https://doi.org/10.1029/2023EA003458>.
+:::
+
+## Roadmap to fully reproducible scientific manuscripts
+
+*that are not just PDFs that are the outputs of a single qmd file*
+
+::: fragment
+[{{< fa puzzle-piece >}}]{style="font-size: 50px; color: #4B8BBE"} An end-to-end scholarly publishing workflow that treats Jupyter and Quarto notebooks as a primary element of the scientific record.
+:::
+
+::: fragment
+[{{< fa puzzle-piece >}}]{style="font-size: 50px; color: #306998"} A publication process that elevates transparent and reproducible work by authors, where data and software, together with narrative, are documented, shared, and archived.
+:::
+
+::: fragment
+[{{< fa puzzle-piece >}}]{style="font-size: 50px"} New forms of credit to the wider research community, including research software engineers or rsearch software engineers.
+:::
+
+## Quarto can...
+
+::: incremental
+-   **be authored** in your favorite code editor
+-   **render** from qmd or Jupyter notebook to PDF, Word, HTML, etc.
+-   **execute** code in R, Python, and more
+-   **apply** journal styles to your outputs with Quarto extensions
+-   **publish** to GitHub Pages, Netlify, and more
+-   [**orchestrate** multiple inputs and outputs with Quarto projects]{.fragment .fade-in-then-semi-out}
+-   [**orchestrate** multiple inputs and outputs **with embedded computing using a new Quarto project `type: manuscript`**]{.fragment style="color: #e0218a"}
+:::
+
+# A new project<br>`type: manuscript`
+
+## Quarto manuscript
+
+Quarto **manuscripts** (Quarto 1.4+), in addition to doing everything you can do with journal articles, can
+
+-   produce manuscripts in **multiple formats** (including LaTeX or MS Word formats required by journals), and give readers easy access to all of the formats through a website
+
+-   **publish computations** from one or more notebooks alongside the manuscript, allowing readers to dive into your code and view it or interact with it in a virtual environment
+
+# Let's write a manuscript
+
+## Getting started
+
+-   Approach 1: Start from scratch
+    -   Creating a Quarto manuscript
+        -   RStudio: New Project \> New Directory \> Quarto Manuscript
+        -   `quarto create project manuscript <name>`
+    -   Add manuscript content
+-   Approach 2: Start with a sample from <https://quarto.org/docs/manuscripts>
+
+::: callout-tip
+## Manuscripts ♥️ Git + GitHub
+
+Track your project with Git and host on GitHub for easy publishing.
+:::
+
+## Create a new project
+
+``` {.bash filename="Terminal"}
+quarto create project manuscript indo-rct
+```
+
+<br>
+
+```         
+Creating project at /Users/mine/indo-rct:
+  - Created _quarto.yml
+  - Created index.qmd
+  - Created references.bib
+ ? Open With
+   vscode
+ ❯ rstudio
+   (don't open)
+```
+
+## Manuscript project in RStudio
+
+![](images/manuscript-create-rstudio.png){fig-align="center"}
+
+## Manuscript project `_quarto.yml`
+
+``` {.yaml filename="_quarto.yml"}
+project:
+  type: manuscript
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    comments:
+      hypothesis: true
+  docx: default
+  jats: default
+
+  # (other formats)
+  # pdf: default
+
+execute:
+  freeze: true
+```
+
+## A finished product
+
+```{=html}
+<iframe src="https://mine-cetinkaya-rundel.github.io/indo-rct//" title="A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis" width="1100px" height="600px"></iframe>
+```
+## Multiple formats from one source
+
+![](images/multiple-formats.png){fig-align="center"}
+
+## Multiple formats from one source
+
+In `quarto.yml` of the project:
+
+``` {.yaml filename="_quarto.yml"}
+format:
+  html:
+    comments:
+      hypothesis: true
+  docx: default
+  jats: default
+  plos-pdf:
+    keep-tex: true
+```
+
+## Rich front matter
+
+In `index.qmd` of the project:
+
+``` {.yaml filename="index.qmd"}
+title: A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis
+subtitle: Reproduction
+authors:
+  - name: B. Joseph Elmunzer, M.D.
+    affiliation: University of Michigan Medical Center
+    roles: writing
+    corresponding: true
+  - name: James M. Scheiman, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: Glen A. Lehman, M.D.
+    affiliation:  Indiana University Medical Center
+  - name: Amitabh Chak, M.D.
+    affiliation: University Hospitals Case Medical Center
+  - name: Patrick Mosler, M.D., Ph.D.
+    affiliation: University of Kentucky Medical Center
+  - name: Peter D.R. Higgins, M.D., Ph.D.
+    affiliation: University of Michigan Medical Center
+    orcid: 0000-0003-1602-4341
+    email: phiggins@umich.edu
+  - name: Rodney A. Hayward, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: Joseph Romagnuolo, M.D.
+    affiliation: Medical University of South Carolina
+  - name: Grace H. Elta, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: Stuart Sherman, M.D.
+    affiliation:  Indiana University Medical Center
+  - name: Akbar K. Waljee, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: Aparna Repaka, M.D.
+    affiliation: University Hospitals Case Medical Center
+  - name: Matthew R. Atkinson, M.D.
+    affiliation: University Hospitals Case Medical Center
+  - name: Gregory A. Cote, M.D.
+    affiliation:  Indiana University Medical Center
+  - name: Richard S. Kwon, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: Lee McHenry, M.D.
+    affiliation:  Indiana University Medical Center
+  - name: Cyrus R. Piraka, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: Erik J. Wamsteker, M.D.
+    affiliation: University of Michigan Medical Center
+  - name: James L. Watkins, M.D.
+    affiliation:  Indiana University Medical Center
+  - name: Sheryl J. Korsnes, M.A.
+    affiliation: University of Michigan Medical Center
+  - name: Suzette E. Schmidt, B.S.N., C.C.R.P.
+    affiliation:  Indiana University Medical Center
+  - name: Sarah M. Turner, B.S.
+    affiliation: University of Kentucky Medical Center
+  - name: Sylvia Nicholson, C.C.R.C.
+    affiliation: University of Kentucky Medical Center
+  - name: Evan L. Fogel, M.D.
+    affiliation:  Indiana University Medical Center
+bibliography: references.bib
+abstract: |
+  **BACKGROUND**
+  Preliminary research suggests that rectally administered nonsteroidal antiinflammatory drugs may reduce the incidence of pancreatitis after endoscopic retrograde cholangiopancreatography (ERCP).
+  
+  **METHODS**
+  In this multicenter, randomized, placebo-controlled, double-blind clinical trial, we assigned patients at elevated risk for post-ERCP pancreatitis to receive a single dose of rectal indomethacin or placebo immediately after ERCP. Patients were determined to be at high risk on the basis of validated patient- and procedure-related risk factors. The primary outcome was post-ERCP pancreatitis, which was defined as new upper abdominal pain, an elevation in pancreatic enzymes to at least three times the upper limit of the normal range 24 hours after the procedure, and hospitalization for at least 2 nights.
+  
+  **RESULTS**
+  A total of 602 patients were enrolled and completed follow-up. The majority of patients (82%) had a clinical suspicion of sphincter of Oddi dysfunction. Post-ERCP pancreatitis developed in 27 of 295 patients (9.2%) in the indomethacin group and in 52 of 307 patients (16.9%) in the placebo group (P=0.005). Moderate-to-severe pancreatitis developed in 13 patients (4.4%) in the indomethacin group and in 27 patients (8.8%) in the placebo group (P=0.03).
+  
+  **CONCLUSIONS**
+  Among patients at high risk for post-ERCP pancreatitis, rectal indomethacin significantly reduced the incidence of the condition. (Funded by the National Institutes of Health; ClinicalTrials.gov number, NCT00820612. opens in new tab.)
+```
+
+## Rich front matter
+
+from source $\rightarrow$ only relevant / required metadata in manuscript:
+
+![](images/manuscript-pdf.png){fig-align="center"}
+
+## Rich front matter
+
+from source $\rightarrow$ only relevant / required metadata in manuscript:
+
+![](images/manuscript-word.png){fig-align="center"}
+
+## Embedded computations
+
+```{=html}
+<iframe src="https://mine-cetinkaya-rundel.github.io/indo-rct//" title="A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis" width="1100px" height="600px"></iframe>
+```
+# What's next?
+
+## *Actually* dive into the code
+
+::: incremental
+-   We've seen that you can *peruse* the code underlying the figures and tables in the manuscript
+
+-   What if you wanted to *interact* with the code -- in a computational environment that's just a click away and that has all the software and packages needed to reproduce the manuscript?
+:::
+
+## Back in 2019...
+
+![](images/elife-paper.png){fig-align="center" width="800"}
+
+## Binder with Quarto
+
+with `quarto use binder`:
+
+```{=html}
+<iframe src="https://mine-cetinkaya-rundel.github.io/indo-rct//" title="A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis" width="1100px" height="600px"></iframe>
+```
+
+## Binder with Quarto
+
+![](images/launch-binder-1.png){fig-align="center"}
+## Binder with Quarto
+
+![](images/launch-binder-2.png){fig-align="center"}
+
+## Rewind,<br>and get started again {.center}
+
+{{< fa link >}} <https://quarto.org/docs/manuscripts>
+
+## Thank you! {.center}
+
+Slides:
+
+{{< fa link >}} [mine.quarto.pub/manuscripts-rmed](https://mine.quarto.pub/manuscripts-rmed)
+
+{{< fa brands github >}} [github.com/mine-cetinkaya-rundel/quarto-manuscripts](https://github.com/mine-cetinkaya-rundel/quarto-manuscripts)
+
+Manuscript:
+
+{{< fa file-code >}} [mine-cetinkaya-rundel.github.io/indo-rct](https://mine-cetinkaya-rundel.github.io/indo-rct/)
+
+{{< fa brands github >}} [github.com/mine-cetinkaya-rundel/indo-rct](https://github.com/mine-cetinkaya-rundel/indo-rct)
