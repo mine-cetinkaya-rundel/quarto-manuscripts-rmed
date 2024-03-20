@@ -383,6 +383,15 @@ from source $\rightarrow$ only relevant / required metadata in manuscript:
 ```{=html}
 <iframe src="https://mine-cetinkaya-rundel.github.io/indo-rct//" title="A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis" width="1100px" height="600px"></iframe>
 ```
+
+## Everything you love...
+
+about authoring Quarto documents in RStudio
+
+<br>
+
+{{< fa laptop-code >}} A brief demo
+
 # What's next?
 
 ## *Actually* dive into the code
