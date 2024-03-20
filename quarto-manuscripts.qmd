@@ -425,6 +425,17 @@ with `quarto use binder`:
 
 {{< fa link >}} <https://quarto.org/docs/manuscripts>
 
+## Before I wrap up...
+
+<br>
+
+**R/Medicine 2024**
+
+June 10-14, 2024 (Virtual) 
+
+Abstract submissions at [rconsortium.github.io/RMedicine_website](https://rconsortium.github.io/RMedicine_website)
+
+
 ## Thank you! {.center}
 
 Slides:
