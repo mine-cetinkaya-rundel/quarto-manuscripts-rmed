@@ -41,7 +41,8 @@ Can run all code in a single file, and don't mind running it over and over again
 :::
 :::
 
-e.g. Data Science 101 - HW 1, Stat 101 - Final project, a blog post, a tutorial, a not-too-extensive consulting report, etc.
+e.g.
+Data Science 101 - HW 1, Stat 101 - Final project, a blog post, a tutorial, a not-too-extensive consulting report, etc.
 
 ## Simple
 
@@ -163,7 +164,8 @@ and ~~dies~~ **ends in PDF or Word documents**
 More at <https://data.agu.org/notebooks-now>.
 
 ::: aside
-Caprarelli, Graziella, et al. "Notebooks Now! The Future of Reproducible Research." *Earth and Space Science* 10.12 (2023): e2023EA003458. <https://doi.org/10.1029/2023EA003458>.
+Caprarelli, Graziella, et al. "Notebooks Now! The Future of Reproducible Research." *Earth and Space Science* 10.12 (2023): e2023EA003458.
+<https://doi.org/10.1029/2023EA003458>.
 :::
 
 ## Roadmap to fully reproducible scientific manuscripts
@@ -179,7 +181,7 @@ Caprarelli, Graziella, et al. "Notebooks Now! The Future of Reproducible Researc
 :::
 
 ::: fragment
-[{{< fa puzzle-piece >}}]{style="font-size: 50px"} New forms of credit to the wider research community, including research software engineers or rsearch software engineers.
+[{{< fa puzzle-piece >}}]{style="font-size: 50px"} New forms of credit to the wider research community, including research software engineers.
 :::
 
 ## Quarto can...
@@ -383,7 +385,6 @@ from source $\rightarrow$ only relevant / required metadata in manuscript:
 ```{=html}
 <iframe src="https://mine-cetinkaya-rundel.github.io/indo-rct//" title="A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis" width="1100px" height="600px"></iframe>
 ```
-
 ## Everything you love...
 
 about authoring Quarto documents in RStudio
@@ -413,11 +414,9 @@ with `quarto use binder`:
 ```{=html}
 <iframe src="https://mine-cetinkaya-rundel.github.io/indo-rct//" title="A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis" width="1100px" height="600px"></iframe>
 ```
-
 ## Binder with Quarto
 
-![](images/launch-binder-1.png){fig-align="center"}
-## Binder with Quarto
+![](images/launch-binder-1.png){fig-align="center"} \## Binder with Quarto
 
 ![](images/launch-binder-2.png){fig-align="center"}
 
@@ -431,10 +430,9 @@ with `quarto use binder`:
 
 **R/Medicine 2024**
 
-June 10-14, 2024 (Virtual) 
+June 10-14, 2024 (Virtual)
 
 Abstract submissions at [rconsortium.github.io/RMedicine_website](https://rconsortium.github.io/RMedicine_website)
-
 
 ## Thank you! {.center}
 
